@@ -4,6 +4,7 @@ import LoadingBar from '../../shared/LoadingBar';
 import StaticVariables from '../../environment';
 import { getStoriesIds, getStoryById } from '../services/stories';
 import Story from './Story';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 export interface IStory {
   by: string;
@@ -106,15 +107,21 @@ class StoriesContainer extends React.Component<{}, IStoriesContainerState> {
   //
 
   render() {
-    const { loading, storiesList } = this.state;
+    const { loading, storiesList, start, storiesIds } = this.state;
 
     return (
       <div className="stories-container">
-        <div className="stories-list">
+        <InfiniteScroll
+          dataLength={storiesList.length}
+          next={this.appendStoryPatch}
+          hasMore={start < storiesIds.length}
+          loader={null}
+          className="stories-list"
+        >
           {storiesList.map((n, i) => {
             return <Story data={n} key={n.id} />;
           })}
-        </div>
+        </InfiniteScroll>
         {loading ? <LoadingBar /> : ''}
       </div>
     );

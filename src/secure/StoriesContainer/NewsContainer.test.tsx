@@ -18,7 +18,7 @@ describe('Stories List component', () => {
         .state as IStoriesContainerState;
       expect(state.storiesIds.length).toBe(2);
       expect(state.loading).toBe(false);
-      expect(state.storiesList.length).toBe(2)
+      expect(state.storiesList.length).toBe(2);
       done();
     }, 1000);
   });
