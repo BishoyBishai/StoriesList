@@ -1,0 +1,12 @@
+{
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "ordered-import": false,
+    "object-literal-sort-keys": false,
+    "no-console": false,
+    "max-classes-per-file": false,
+    "member-access": false,
+    "jsx-no-lambda": false,
+    "ordered-imports": false
+  }
+}
