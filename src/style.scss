@@ -1,0 +1,16 @@
+html,
+body {
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main-container {
+  height: 100vh;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-rows: 100px auto 70px;
+  padding: 5px;
+}

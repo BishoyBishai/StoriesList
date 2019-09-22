@@ -1,0 +1,22 @@
+@import './../../sass/color.scss';
+.header {
+  background: $gray;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  .block {
+    background: $dark-gray;
+    width: 250px;
+    height: 40px;
+  }
+  .nav {
+    display: flex;
+    &-item {
+      background: $dark-gray;
+      width: 120px;
+      margin: 0.5em 0;
+      margin-right: 0.5em;
+      height: 20px;
+    }
+  }
+}

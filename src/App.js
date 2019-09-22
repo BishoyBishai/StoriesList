@@ -1,10 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
-
+import Header from './shared/Header';
+import Footer from './shared/Footer';
+import './style.scss';
 
 const App = () => {
   return (
-      <div>Secret Escape</div>
+    <div className="main-container">
+      <Header />
+      <div>Body</div>
+      <Footer />
+    </div>
   );
 };
 
