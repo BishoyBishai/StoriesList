@@ -1,0 +1,72 @@
+@import "src/sass/color.scss";
+
+.story-item {
+  background: $light-gray;
+  padding: 1em;
+  border: 1px solid $white;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+
+  .logo {
+    text-align: center;
+    width: 40px;
+    color: $dark-gray;
+    margin-right: 1em;
+    float: left;
+    &-arrow {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+
+      border-bottom: 20px solid $dark-gray;
+    }
+  }
+  .story-body {
+    display: grid;
+    .one-line {
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      &.title{
+        font-size: .8em;
+        color:$dark;
+      }
+      &.by{
+        font-size: .7em;
+        color:$dark-gray;
+        margin-top: .2em;
+        margin-bottom: 1em;
+      }
+      &.by{
+        font-size: .6em;
+        color:$dark-gray;
+      }
+    }
+  }
+}
+.story-item.expand {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: $active;
+  .story-body {
+    .one-line {
+      text-overflow: initial;
+      overflow: auto;
+      white-space: normal;
+      &.title{
+        font-size: 1em;
+      }
+      &.by{
+        font-size: .8em;
+      }
+      &.by{
+        font-size: .8em;
+      }
+    }
+  }
+}

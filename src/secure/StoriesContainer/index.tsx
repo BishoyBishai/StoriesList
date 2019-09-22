@@ -3,6 +3,7 @@ import './style.scss';
 import LoadingBar from '../../shared/LoadingBar';
 import StaticVariables from '../../environment';
 import { getStoriesIds, getStoryById } from '../services/stories';
+import Story from './Story';
 
 export interface IStory {
   by: string;
@@ -109,9 +110,11 @@ class StoriesContainer extends React.Component<{}, IStoriesContainerState> {
 
     return (
       <div className="stories-container">
+        <div className="stories-list">
           {storiesList.map((n, i) => {
-            return <div key={n.id}>{n.title}</div>
+            return <Story data={n} key={n.id} />;
           })}
+        </div>
         {loading ? <LoadingBar /> : ''}
       </div>
     );
